@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+
+            function resetButtons(form) {
+                buttons = form.querySelectorAll('button')
+                buttons.forEach(function(button) {
+                    button.style.backgroundColor = '#d9edff';
+                })
+            }
+
+            function checkAnswer(form, result) {
+                buttons = form.querySelectorAll('button')
+                buttons.forEach(function(button) {
+                    button.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        resetButtons(form);
+                        let buttonClicked = event.target.id;
+                        let _result = document.getElementById(result)
+                        if (buttonClicked.includes('correct')) {
+                            event.target.style.backgroundColor = 'green';
+                            _result.innerHTML = 'Correct!';
+                        }
+                        else {
+                            event.target.style.backgroundColor = 'red';
+                            _result.innerHTML = 'Incorrect!';
+                        }
+                    })
+                })
+            }
+
+
+            document.addEventListener('DOMContentLoaded', function(){
+                let sheepForm = document.querySelector('#sheep');
+                let teamForm = document.querySelector('#team');
+                checkAnswer(sheepForm, 'mcq1result');
+                checkAnswer(teamForm, 'mcq2result');
+
+                let answerField = document.querySelector('#goatAnswer');
+                let _goatResult = document.getElementById('goatResult');
+                document.querySelector('#fr1button').addEventListener('click', function() {
+                    if(answerField.value.toLowerCase().includes('ronaldo')){
+                        answerField.style.backgroundColor = 'green';
+                        _goatResult.innerHTML = 'Correct!';
+                    }
+                    else {
+                        answerField.style.backgroundColor = 'red';
+                        _goatResult.innerHTML = 'Incorrect!';
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is the approximate ratio of people to sheep in New Zealand?</h3>
+                    <form id="sheep">
+                        <button type="button">6 people per 1 sheep</button>
+                        <button type="button">3 people per 1 sheep</button>
+                        <button type="button">1 person per 1 sheep</button>
+                        <button type="button">1 person per 3 sheep</button>
+                        <button type="button" id="q1correct">1 person per 6 sheep</button>
+                    </form>
+                    <p id="mcq1result"></p>
+                <h3>Which team is the best football team in the world?</h3>
+                    <form id="team">
+                        <button type="button">Manchester City</button>
+                        <button type="button" id="q2correct">Real Madrid</button>
+                        <button type="button">Barcelona</button>
+                        <button type="button">Bayern Munich</button>
+                        <button type="button">Liverpool</button>
+                    </form>
+                    <p id="mcq2result"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>Who is the GOAT of Football?</h3>
+                <!-- TODO: Add free response question here -->
+                <form id = "goat">
+                    <input autocomplete="off" id="goatAnswer" type="text">
+                    <button id='fr1button' type="button">Submit</button>
+                </form>
+                <p id="goatResult"></p>
+            </div>
+        </div>
+    </body>
+</html>

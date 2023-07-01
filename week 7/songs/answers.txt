@@ -1,0 +1,4 @@
+The person's top 100 songs had an average of 0.65906 for energy, 0.71646 for danceability and 0.484443 for valence.
+It has high danceability and low valence.
+
+This might not be he best representation because the person may have listened to a lot more than 100 songs, which causes this sample to be inaccurate. To get a better estimate, we could increase the sample size for number of songs (eg. calculate based on the person's top 500 songs.)

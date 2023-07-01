@@ -1,0 +1,16 @@
+sort1 uses: bubble sort
+How do you know?: I first found the merge sort algorithm (sort2) as it is significantly faster than the other 2 sorts.
+When differentiating between selection sort and bubble sort, I wanted to look at the difference in timing to sort reversed and sorted lists of the same size.
+This is because selection sort should take the same time to sort both a random list and a sorted list (order of n^2).
+However, bubble sort would take a much shorter time for a sorted list compared to a reversed list, as sorted list gives merge sort the best case on an order of 'n', while worst case has an order of 'n^2'.
+sort1 performed very poorly on a reversed list, but very well on a sorted list. This means it is bubble sort
+sort3 performed around the same on both a reversed list and a sorted list. This means it is selection sort.
+
+
+sort2 uses: merge sort
+
+How do you know?: merge sort is the fastest out of the 3 sorts as it is on the order of 'n log n' steps. This is seen by the smaller values in running the program, regardless of whether it is reversed or random, and regardless of the size of the list.
+
+sort3 uses: selection sort
+
+How do you know?: The same reason as sort1; it performed around the same for both a sorted list and a reversed list. Selection sort has an equal upper bound and lower bound running times, thus the consistent running times between different lists show that this is a selection sort.

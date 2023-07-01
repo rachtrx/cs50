@@ -1,0 +1,56 @@
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.section:nth-of-type(odd) {
+    background-color: #2F3C7E; /* set background color for odd containers */
+    color: #FBEAEB;
+}
+
+.section:nth-of-type(even) {
+    background-color: #FBEAEB; /* set background color for even containers */
+    color: #2F3C7E
+}
+
+.dreams {
+    background-color: #FFD700
+}
+
+.hobbies {
+    background-color: #ADD8E6
+}
+
+.sports {
+    background-color: #E0BFB8
+}
+
+p {
+    font-family: Lucida Sans;
+    font-size: 10px;
+    padding: 0.375rem 0.75rem;
+}
+
+.dropdownButton {
+    background-color: #d9edff;
+    border: 1px solid transparent;
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0.375rem 0.75rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+h1 {
+    font-family: 'MV Boli', sans-serif;
+    font-size: 48px;
+    text-align: center;
+}
+
+div {
+    width: 100%
+  }
